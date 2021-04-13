@@ -1,0 +1,28 @@
+body, html {
+    margin: 0; 
+    padding: 0;
+    
+}
+
+.etchContainer {
+    margin-top: 50px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.etchGrid {
+    
+    display: grid;
+    grid-gap: 5px;
+    width: 800px;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    
+}
+
+.grid {
+}
