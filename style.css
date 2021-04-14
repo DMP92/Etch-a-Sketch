@@ -4,17 +4,15 @@ body, html {
     
 }
 
-.etchContainer {
+#etchContainer {
     margin-top: 50px;
     display: grid;
     justify-content: center;
     align-items: center;
 }
 
-.etchGrid {
-    
+#etchGrid {
     display: grid;
-    grid-gap: 5px;
     width: 800px;
     height: 800px;
     justify-content: center;
@@ -25,4 +23,10 @@ body, html {
 }
 
 .grid {
+    border: 2px solid black;
+    width: 80px;
+    height: 80px;
+
 }
+
+

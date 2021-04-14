@@ -1,60 +1,36 @@
 
-var etchGrid = document.querySelector('.etchGrid');
-var grid = document.createElement('div');
-grid.setAttribute('class', 'grid');
+let etchGrid = document.getElementById('etchGrid');
+
+
+
 
 
 function gridCreation(num) {
-    
-for (i = 1; i <= num; i++) {
-    grid = document.createElement('div');
-    grid.style.cssText = "border: 1px solid black;   width: 80px; height: 80px;";
-    etchGrid.appendChild(grid);
-    
-}
-
-for (i = 1; i <= num; i++) {
-    grid = document.createElement('div');   
-    grid.style.cssText = "border: 1px solid black; width: 80px; height: 80px;";
-    etchGrid.appendChild(grid);
-    
-}
-
-for (i = 1; i <= num; i++) {
-    grid = document.createElement('div');  
-    grid.style.cssText = "border: 1px solid black;  width: 80px; height: 80px;";
-    etchGrid.appendChild(grid);
-    
-}
-
-for (i = 1; i <= num; i++) {    
-    grid = document.createElement('div');  
-    grid.style.cssText = "border: 1px solid black;  width: 80px; height: 80px;";
-    etchGrid.appendChild(grid);
-}
-}
-
-gridCreation(10);
-
-
-let colorArray = [
-     "Orange", 
-     "Blue", 
-     "Red",
-     "Gray",
-     "Yellow",
-     "Brown", 
-     "Green", 
-     "Pink", 
-     "Black"
-    ];
-
-    function colorRandomizer() {
-        let colors = colorArray[Math.floor(Math.random() * colorArray.length)];
-        grid.style.backgroundColor = colors;
-        
+    for (let i = 1; i <= num; i++) {
+        const grid = document.createElement('div');
+        grid.classList="grid";
+        grid.addEventListener('mouseover', rGB);
+        etchGrid.appendChild(grid);  
     }
+}
+gridCreation(100);
+        
+function rGB(e) {
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    let opacity = Math.random();
+    e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+}
+rGB();
+
+
+
+
     
+        
+ 
+   
 
 
-grid.addEventListener('mouseover', colorRandomizer, true);
+
