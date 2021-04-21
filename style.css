@@ -1,32 +1,221 @@
 body, html {
     margin: 0; 
     padding: 0;
+    background: linear-gradient(to right, #6a6384, #5cc1aa, #81c9ac)
+}
+
+button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* main container that holds both buttons and grid */
+.mainContainer {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5% 5% 85% 5%;
+    grid-template-areas: 
+                "title"
+                "buttons"
+                "grid"
+                "designedBy";
+                
+    justify-items: center;
+    align-items: flex-start;
+    grid-gap: 10px;
+    height: 100%;
+    width: 100%;
     
 }
+
+.title {
+    margin-bottom: 150px;
+    grid-area: "title";
+    height: 7vmin;
+    width: 80vmin;
+    align-self: flex-start;
+    text-align: center;
+    font-size: 3.5vh;
+}
+
+@media screen and (min-width: 1831px) /* Max Desktop View */
+{
+    .btn-container {
+        display: grid;
+        grid-area: "buttons";
+        display: flex;
+        max-width: 1240px;
+        height: 4vh;
+        justify-content: space-between;
+        align-self: flex-end;
+    }
+}
+
+@media screen and (max-width: 1830px)
+{
+.btn-container {
+    display: grid;
+    grid-area: "buttons";
+    display: flex;
+    width: 65%;
+    height: 5vh;
+    justify-content: space-between;
+    align-self: flex-end;
+
+}
+}
+
+@media screen and (max-width: 1200px)
+{
+.btn-container {
+    display: grid;
+    grid-area: "buttons";
+    display: flex;
+    width: 80vw;
+    height: 100%;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+}
+
+
+@media screen and (min-width: 1201px) {
+    .btnClear {
+        width: 15vw;
+        font-size: 2vh;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .btnClear {
+        width: 15vw;
+        font-size: 1.5vh;
+        text-align: center;
+    } 
+}
+@media screen and (min-width: 1201px) {
+    .colorOne {
+        width: 10vw;
+        font-size: 1.5vh;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .colorOne {
+        width: 10vw;
+        font-size: 1.25vh;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 1201px) {
+    .colorTwo {
+        width: 10vw;
+        font-size: 1.5vh;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .colorTwo {
+        width: 10vw;
+        font-size: 1.25vh;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 1201px) {
+    .colorThree {
+        width: 10vw;
+        font-size: 1.5vh;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .colorThree {
+        width: 10vw;
+        font-size: 1.25vh;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 1201px) {
+    .custom {
+        width: 15vw;
+        height: 100%;
+        font-size: 1.78vh;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .custom {
+        width: 15vw;
+        height: 100%;
+        font-size: 1.5vh;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
 
 #etchContainer {
-    margin-top: 50px;
+    height: 100%;
     display: grid;
     justify-content: center;
-    align-items: center;
-}
-
-#etchGrid {
-    display: grid;
-    width: 800px;
-    height: 800px;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    align-items: flex-start;
+    
     
 }
 
-.grid {
-    border: 2px solid black;
-    width: 80px;
-    height: 80px;
 
+#etchGrid {
+    position: relative;
+    z-index: 0;
+    display: grid;
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 80vmin; 
+    height: 80vmin;
+    overflow: hidden;
+   
 }
 
 
+.grid {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+
+
+
+@media screen and (min-width: 1201px) {
+    .designedBy {
+        position: relative;
+        grid-area: "designedBy";
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .designedBy {
+        position: relative;
+        margin: 10px;
+        align-self: flex-start;
+        grid-area: "designedBy";
+        text-align: center;
+    }
+}
+
+ {
+    background-color: rgba(0, 0, 0, 1);
+}
