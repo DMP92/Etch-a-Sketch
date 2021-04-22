@@ -43,13 +43,23 @@ function gridPrompt() {
     removeAllChildNodes(etchGrid);
     cleanSlate();
     let cell = prompt("Enter The Size Of Your Grid", "Any Number From 2 - 64");
-    if (cell <= 1 || cell > 65){
+    if (cell <= 1 || cell >= 65){
         alert("Invalid Grid Size. (2 - 64 only)");
-    } else {
+        let grid = document.createElement('div');
+        grid.classlist = 'grid';
+        let etchGrid = document.getElementById('etchGrid');
+        makeGrid(35);
+    } else if (cell > 1 || cell < 65) {
         let grid = document.createElement('div');
         grid.classlist = 'grid';
         let etchGrid = document.getElementById('etchGrid');
         makeGrid(cell);
+    
+    } else if (cell == "Enter The Size Of Your Grid", "Any Number From 2 - 64") {
+        let grid = document.createElement('div');
+        grid.classlist = 'grid';
+        let etchGrid = document.getElementById('etchGrid');
+        makeGrid(35);
     }
 } 
 

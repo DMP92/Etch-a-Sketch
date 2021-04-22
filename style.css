@@ -30,6 +30,45 @@ button {
     
 }
 
+
+.colorOne:focus {
+    font-family: Montserrat;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-color: transparent;
+    border-radius: 3px;
+    background-color: rgba(176, 47, 67) !important;
+    color: white;
+    box-shadow: rgba(255, 255, 255, .7) -.5px -.5px 10px 1px;
+    
+}
+.colorTwo:focus {
+    font-family: Montserrat;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-color: transparent;
+    border-radius: 3px;
+    background-color: rgba(176, 47, 67) !important;
+    color: white;
+    box-shadow: rgba(255, 255, 255, .7) -.5px -.5px 10px 1px;
+    
+}
+.colorThree:focus {
+    font-family: Montserrat;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-color: transparent;
+    border-radius: 3px;
+    background-color: rgba(176, 47, 67) !important;
+    color: white;
+    box-shadow: rgba(255, 255, 255, .7) -.5px -.5px 10px 1px;
+    
+}
+
+
 /* main container that holds both buttons and grid */
 .mainContainer {
     margin-top: 30px;
