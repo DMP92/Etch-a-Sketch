@@ -173,16 +173,19 @@ function colorizeGrid(e) {
        
         let currentOpacity = Number(e.target.style.backgroundColor.slice(-4, -1));
         let coloredOpacity = e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        let fullOpacity = e.target.style.backgroundColor = 'rgba(0, 0, 0)';
 
         if (currentOpacity > .9) {
             e.target.style.backgroundColor = `rgba(0, 0, 0, .1)`;
         } else if (currentOpacity <= .9) {
-            e.target.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + .1})`;
-        } 
+            e.target.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + .1})`
+        } else if (currentOpacity = fullOpacity) {
+            e.target.style.backgroundColor = `${fullOpacity}`;
+        }
 
 
         if (coloredOpacity > 1) {
-            e.target.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + .1})`;
+            e.target.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 1})`
         }
     } else {
             let red = Math.floor(Math.random() * 256);
