@@ -1,7 +1,9 @@
 grid = document.createElement('div');
 grid.classList="grid";
+let currentGrid = document.querySelector('grid');
 let etchGrid = document.getElementById('etchGrid');    
-let allGrids = document.querySelectorAll('.grid');
+let allGrids = document.querySelectorAll('div');
+let eachGrid = document.getElementsByClassName('grid');
 let etchContainer = document.getElementById('etchContainer');
 let off = "off";
 let on = "on";
@@ -105,6 +107,7 @@ secondColor.addEventListener('click', () => {
 // 'Gray Scale' - Color Scheme #3
 //-----------------------------------------------
 let thirdColor = document.querySelector('.colorThree');
+thirdColor.addEventListener('click', third);
 
 
 
@@ -116,7 +119,6 @@ function third() {
     colorizeGrid;
 }
 
-thirdColor.addEventListener('click', third);
 
 // Clears the grid 
 // ---------------------------------------------
@@ -125,7 +127,7 @@ function cleanSlate() {
     let allGrids = document.getElementsByClassName('grid');
 
     for (let i = 0; i < allGrids.length; i++) {
-        allGrids[i].style.backgroundColor = 'transparent';
+        allGrids[i].style.backgroundColor = '';
     }    
 }    
 
@@ -168,22 +170,35 @@ function colorizeGrid(e) {
      
 
     } else if (clicked3 == "on") {
-        let gray = .1;
-        let shades = gray + .1;
-        e.target.style.backgroundColor = `rgba(0, 0, 0, ${shades + .1})`;
-        console.log(getComputedStyle(etchGrid).backgroundColor);
+       
+        let currentOpacity = Number(e.target.style.backgroundColor.slice(-4, -1));
+        let coloredOpacity = e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
 
+        if (currentOpacity > .9) {
+            e.target.style.backgroundColor = `rgba(0, 0, 0, .1)`;
+        } else if (currentOpacity <= .9) {
+            e.target.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + .1})`;
+        } 
+
+
+        if (coloredOpacity > 1) {
+            e.target.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + .1})`;
+        }
     } else {
             let red = Math.floor(Math.random() * 256);
             let green = Math.floor(Math.random() * 256);
             let blue = Math.floor(Math.random() * 256);
-            e.target.style.backgroundColor = `rgba(${red}, ${green}, ${blue})`;
+            e.target.style.backgroundColor += `rgba(${red}, ${green}, ${blue})`;
             
             
         }
         
     }
     
-    etchGrid.addEventListener('mouseover', colorizeGrid);
+    allGrids.forEach(grids => grids.addEventListener('mouseover', colorizeGrid));
     
+/*
+Each time there is a mouseover:
+take the color that already exists - add .1 / .2 in opacity
 
+*/
