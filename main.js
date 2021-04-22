@@ -210,8 +210,3 @@ function colorizeGrid(e) {
     
     allGrids.forEach(grids => grids.addEventListener('mouseover', colorizeGrid));
     
-/*
-Each time there is a mouseover:
-take the color that already exists - add .1 / .2 in opacity
-
-*/
