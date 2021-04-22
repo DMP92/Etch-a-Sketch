@@ -12,22 +12,20 @@ let standard = 'on';
 
 // Standard Grid and colors
 
+
 window.addEventListener('load', makeGrid(35));
 
 function makeGrid(cell) {
-   
     for (let i = 0; i < (cell * cell); i++) {
         let grid = document.createElement('div');
         grid.classList = 'grid';
-        
+        etchGrid.style.cssText = 'background-color: rgba(255, 255, 255, 0.85)';
         etchGrid.style.gridTemplateColumns = `repeat(${cell}, 1fr)`;
         etchGrid.style.gridTemplateRows = `repeat(${cell}, 1fr)`;
         etchGrid.appendChild(grid);
     }
-
+    
 }
-
-
 
 
 
@@ -36,18 +34,33 @@ function makeGrid(cell) {
 let customButton = document.querySelector('.custom');
 customButton.onclick = () => {
     gridPrompt();
+    
 }
 
 function gridPrompt() {
+    removeAllChildNodes(etchGrid);
     cleanSlate();
     let cell = prompt("Enter The Size Of Your Grid", "Any Number From 2 - 64");
     if (cell <= 1 || cell > 65){
         alert("Invalid Grid Size. (2 - 64 only)");
     } else {
+        let grid = document.createElement('div');
+        grid.classlist = 'grid';
+        let etchGrid = document.getElementById('etchGrid');
         makeGrid(cell);
     }
 } 
 
+function clearedUpGrid(){
+    
+        grid = document.createElement('div');
+        grid.classList = "grid";
+        
+        etchGrid.style.gridTemplateColumns = `repeat(0, 1fr)`;
+        etchGrid.style.gridTemplateRows = `repeat(0, 1fr)`;
+    
+
+}
 
 
 // Color Scheme #1 
@@ -120,6 +133,21 @@ function cleanSlate() {
 let clear = document.querySelector('.btnClear');
 clear.onclick = () => cleanSlate();
 
+function cleanGrid() {
+    grid = document.querySelector('.div');
+
+    grid.etchGrid.removeChild(grid);
+    
+}
+
+
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+
+}
 
 
 // Logic for color scheme switches
@@ -143,19 +171,19 @@ function colorizeGrid(e) {
         let gray = .1;
         let shades = gray + .1;
         e.target.style.backgroundColor = `rgba(0, 0, 0, ${shades + .1})`;
-     
+        console.log(getComputedStyle(etchGrid).backgroundColor);
 
     } else {
             let red = Math.floor(Math.random() * 256);
             let green = Math.floor(Math.random() * 256);
             let blue = Math.floor(Math.random() * 256);
             e.target.style.backgroundColor = `rgba(${red}, ${green}, ${blue})`;
-         
-
+            
+            
         }
-     
-}
-
-etchGrid.addEventListener('mouseover', colorizeGrid);
+        
+    }
+    
+    etchGrid.addEventListener('mouseover', colorizeGrid);
     
 
