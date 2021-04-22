@@ -1,20 +1,41 @@
-body, html {
+html {
     margin: 0; 
     padding: 0;
-    background: linear-gradient(to right, #6a6384, #5cc1aa, #81c9ac)
+    height: 100%;
+    width: 100%;
+}
+
+body {  
+    margin: 0; 
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ff9d00;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    /*linear-gradient(90deg, #6a6384, #5cc1aa, #81c9ac);*/
 }
 
 button {
+    font-family: Montserrat;
     margin-left: 5px;
     margin-right: 5px;
+    margin-bottom: 10px;
+    border-color: transparent;
+    border-radius: 3px;
+    background-color: rgba(176, 47, 67, .7) !important;
+    color: white;
+    box-shadow: rgba(255, 255, 255, .7) -.5px -.5px 10px 1px;
+    
 }
 
 /* main container that holds both buttons and grid */
 .mainContainer {
-    margin-top: 80px;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 5% 5% 85% 5%;
+    grid-template-rows: 5% 5% 80% 10%;
     grid-template-areas: 
                 "title"
                 "buttons"
@@ -30,14 +51,17 @@ button {
 }
 
 .title {
-    margin-bottom: 150px;
+    font-family: lobster;
+    margin-bottom: 170px;
     grid-area: "title";
     height: 7vmin;
     width: 80vmin;
     align-self: flex-start;
     text-align: center;
-    font-size: 3.5vh;
+    font-size: 4vh;
     background-color: transparent !important;
+    color: #ff9d00ff;
+    text-shadow: white -.5px -.5px 2px;
 }
 
 @media screen and (min-width: 1831px) /* Max Desktop View */
@@ -50,6 +74,8 @@ button {
         height: 4vh;
         justify-content: space-between;
         align-self: flex-end;
+        background-color: transparent !important;
+
     }
 }
 
@@ -65,6 +91,7 @@ button {
     align-self: flex-end;
     background-color: transparent !important;
 
+
 }
 }
 
@@ -78,7 +105,6 @@ button {
     height: 100%;
     justify-content: space-between;
     align-self: flex-end;
-    background-color: transparent !important;
 
 }
 }
@@ -89,7 +115,6 @@ button {
         width: 15vw;
         font-size: 2vh;
         text-align: center;
-        background-color: white !important;
 
     }
 }
@@ -99,7 +124,6 @@ button {
         width: 15vw;
         font-size: 1.5vh;
         text-align: center;
-        background-color: white !important;
 
     } 
 }
@@ -108,7 +132,6 @@ button {
         width: 10vw;
         font-size: 1.5vh;
         text-align: center;
-        background-color: white !important;
 
     }
 }
@@ -116,9 +139,8 @@ button {
 @media screen and (max-width: 1200px) {
     .colorOne {
         width: 10vw;
-        font-size: 1.25vh;
+        font-size: 1vh;
         text-align: center;
-        background-color: white !important;
 
     }
 }
@@ -127,7 +149,6 @@ button {
         width: 10vw;
         font-size: 1.5vh;
         text-align: center;
-        background-color: white !important;
 
     }
 }
@@ -135,9 +156,8 @@ button {
 @media screen and (max-width: 1200px) {
     .colorTwo {
         width: 10vw;
-        font-size: 1.25vh;
+        font-size: 1vh;
         text-align: center;
-        background-color: white !important;
 
     }
 }
@@ -152,19 +172,15 @@ button {
 @media screen and (max-width: 1200px) {
     .colorThree {
         width: 10vw;
-        font-size: 1.25vh;
+        font-size: 1vh;
         text-align: center;
-        background-color: white !important;
 
     }
 }
 @media screen and (min-width: 1201px) {
     .custom {
         width: 15vw;
-        height: 100%;
-        font-size: 1.78vh;
-        background-color: white !important;
-
+        font-size: 2vh;
         text-align: center;
     }
 
@@ -173,10 +189,8 @@ button {
 @media screen and (max-width: 1200px) {
     .custom {
         width: 15vw;
-        height: 100%;
         font-size: 1.5vh;
         text-align: center;
-        background-color: white !important;
 
     }
 }
@@ -184,11 +198,24 @@ button {
 
 
 
-
+p {
+    color: white !important;
+    background-color: transparent !important;
+    font-size: 20px;
+}
 
 
 .designedBy {
-    background-color: transparent !important;
+    font-family: Montserrat;
+
+    grid-area: "designedBy";
+    position: relative;
+    background-color: #220024 !important;
+    width: 100%;
+    height: 100%;
+    align-self: center !important;
+    border-top: 3px solid #ff9d00;
+    margin-top: 40px;
 }
 
 #etchContainer {
@@ -197,18 +224,17 @@ button {
     justify-content: center;
     align-items: flex-start;
     background-color: transparent !important;
-    
 }
 
 
 #etchGrid {
+    grid-area: "grid";
     position: relative;
-    z-index: 0;
+    z-index: 1;
     display: grid;
     background-color: rgba(255, 255, 255, 0.85) !important;
     width: 80vmin; 
     height: 80vmin;
-    overflow: hidden;
    
 }
 
@@ -240,6 +266,4 @@ button {
     }
 }
 
- {
-    background-color: rgba(0, 0, 0, 1);
-}
+ 
